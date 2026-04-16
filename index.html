@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>One-Minute Breather</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>One-Minute Breather</h1>
+      <p class="tagline">
+        <strong>Sixty seconds. One circle. Your breath.</strong><br />
+        Follow the circle — <strong>Start</strong> when you’re ready.
+      </p>
+
+      <div id="success-banner" class="success-banner hidden" role="status">
+        That was a full minute — nice work. Stay here as long as you like; hit
+        <strong>Start</strong> when you want to go again.
+      </div>
+
+      <div id="controls-idle" class="controls">
+        <button type="button" id="btn-start" class="primary">Start</button>
+      </div>
+
+      <div id="controls-run" class="controls hidden">
+        <div class="btn-row">
+          <button type="button" id="btn-pause">Pause</button>
+          <button type="button" id="btn-resume" class="primary hidden">Resume</button>
+          <button type="button" id="btn-reset">Reset</button>
+        </div>
+      </div>
+
+      <div id="controls-done" class="controls hidden">
+        <button type="button" id="btn-start-done" class="primary">Start</button>
+      </div>
+
+      <section class="breather" aria-live="polite">
+        <div class="timer" id="timer">1:00</div>
+        <div class="timer-sub">Time remaining</div>
+        <div class="breath-label" id="breath-label">Press Start when you’re ready</div>
+        <div class="circle-stage">
+          <svg
+            class="minute-ring"
+            viewBox="0 0 300 300"
+            width="300"
+            height="300"
+            aria-hidden="true"
+          >
+            <circle
+              class="minute-track"
+              cx="150"
+              cy="150"
+              r="142"
+              fill="none"
+              stroke="#dde5f0"
+              stroke-width="5"
+            />
+            <circle
+              id="minute-arc"
+              cx="150"
+              cy="150"
+              r="142"
+              fill="none"
+              stroke="#3d6fd8"
+              stroke-width="5"
+              stroke-linecap="round"
+              transform="rotate(-90 150 150)"
+              stroke-dasharray="0"
+              stroke-dashoffset="0"
+            />
+          </svg>
+          <div
+            id="circle-scale"
+            class="circle-scale"
+            style="--circle-scale: 0.69"
+            aria-hidden="true"
+          >
+            <div class="ring-outer"></div>
+            <div class="breath-circle"></div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section class="learn-block" aria-labelledby="learn-heading">
+        <h2 id="learn-heading">Learn more</h2>
+
+        <details>
+          <summary>Breathing exercises: do they help the body?</summary>
+          <div class="detail-body">
+            Lots of people use breathing to feel calmer — and
+            <strong>research suggests there can be real physiological effects too</strong>.
+            Controlled studies often find that <strong>slow, steady breathing</strong> is
+            associated with <strong>lower blood pressure</strong> and a
+            <strong>slower heart rate</strong> in some groups. Effects
+            <strong>vary by person</strong> and context; think of this as general wellness, not a
+            substitute for medical care.
+          </div>
+        </details>
+
+        <details>
+          <summary>What about mood and mind?</summary>
+          <div class="detail-body">
+            Paying attention to your breath can deepen <strong>self-awareness</strong> and
+            <strong>present-moment focus</strong>. Research and everyday experience often link breath
+            practice to <strong>less anxiety, depression, anger, and confusion</strong> — and to
+            more <strong>comfort, relaxation, pleasantness, and alertness</strong>.
+            <strong>Your experience may differ</strong>; treat this as one tool among many.
+          </div>
+        </details>
+
+        <details>
+          <summary>Is one minute enough to matter?</summary>
+          <div class="detail-body">
+            Life is busy — you’re already breathing — so why bother?
+            <strong>Even a single minute</strong> can help you <strong>reset your mindset</strong>
+            before you dive back in. Longer daily practice (many guides suggest
+            <strong>10–15 minutes</strong>) is often ideal, but
+            <strong>short sessions can still help</strong> — especially when that’s all the time you
+            have.
+          </div>
+        </details>
+
+        <details>
+          <summary>Busy life, short practice</summary>
+          <div class="detail-body">
+            <strong>When you’re “too busy” to meditate</strong> — that’s often when a
+            <strong>tiny pause</strong> helps most. If formal meditation feels impossible,
+            <strong>intentional breathing</strong> is a small step that still counts.<br /><br />
+            <strong>Everyone needs a break</strong> — even setting aside <strong>one minute</strong>
+            to step away from what you’re doing, breathe on purpose, and recharge can make the rest
+            of the day feel more manageable.<br /><br />
+            <strong>Practice anywhere</strong> — all you need is you. At a desk, in traffic, or in
+            line: a few slow breaths can <strong>take the edge off stress</strong> without any special
+            equipment.
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-block" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQs</h2>
+
+        <details>
+          <summary>How does this work?</summary>
+          <div class="detail-body">
+            You get a <strong>60-second</strong> countdown. The <strong>outer ring</strong> traces
+            the edge and fills as the minute passes. The circle <strong>grows</strong> on the inhale
+            and <strong>softens</strong> on the exhale — <strong>4 seconds</strong> in,
+            <strong>6 seconds</strong> out. Match your breathing to the motion.
+          </div>
+        </details>
+
+        <details>
+          <summary>Why does slow, paced breathing feel calming?</summary>
+          <div class="detail-body">
+            Rhythmic breathing at a comfortable pace can
+            <strong>shift the balance toward the parasympathetic (“rest-and-digest”) side</strong> of
+            the nervous system. That often shows up as <strong>slower heart rate</strong> and
+            <strong>smoother heart-rate variability</strong> in research settings, especially when
+            breathing is steady and not strained.
+          </div>
+        </details>
+
+        <details>
+          <summary>What pattern is this?</summary>
+          <div class="detail-body">
+            About <strong>4 seconds in and 6 seconds out</strong> is roughly
+            <strong>6 breaths per minute</strong> — a pace many studies group with
+            <strong>slow, coherent, or resonance-frequency breathing</strong>. People differ, but
+            that range is commonly used in stress and HRV research.
+          </div>
+        </details>
+
+        <details>
+          <summary>What might it help with?</summary>
+          <div class="detail-body">
+            Evidence suggests possible benefits for <strong>subjective stress</strong>,
+            <strong>mood</strong>, and <strong>physiological arousal</strong> in some groups, but
+            effects <strong>aren’t guaranteed</strong> and depend on the person and situation.
+          </div>
+        </details>
+
+        <details>
+          <summary>Anything to watch for?</summary>
+          <div class="detail-body">
+            If you feel <strong>dizzy, panicky, or short of breath</strong>, slow down or stop. This
+            is <strong>not medical treatment</strong>; if you have heart or lung conditions, or
+            anxiety you’re managing clinically, <strong>ask a clinician</strong> before relying on
+            breath exercises.
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
