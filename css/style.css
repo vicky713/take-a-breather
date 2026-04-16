@@ -237,8 +237,52 @@ h2 {
 }
 
 .learn-block,
-.faq-block {
+.faq-block,
+.meta-block {
   margin-bottom: 1.75rem;
+}
+
+.meta-body {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.55;
+  margin: 0 0 0.85rem;
+}
+
+.meta-disclaimer {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.45rem;
+  background: #eef2f8;
+  border: 1px solid #dde5f0;
+}
+
+.meta-subheading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.45rem;
+  color: #333;
+}
+
+.meta-links {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.meta-links a {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.meta-links a:hover {
+  color: var(--accent);
 }
 
 details {
